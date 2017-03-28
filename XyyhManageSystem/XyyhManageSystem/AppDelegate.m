@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XyyHPCH.pch"
 
 @interface AppDelegate ()
 

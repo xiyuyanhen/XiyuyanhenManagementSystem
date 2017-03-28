@@ -1,0 +1,43 @@
+//
+//  XyyHPCH.pch
+//  XyyhManageSystem
+//
+//  Created by DragonPass on 2017/3/28.
+//  Copyright © 2017年 XyyH. All rights reserved.
+//
+
+#ifndef XyyHPCH_pch
+#define XyyHPCH_pch
+
+#import "BaseView.h"
+#import "BaseViewController.h"
+#import "BaseButton.h"
+#import "BaseTextView.h"
+#import "BaseTextField.h"
+#import "UIButton+EnlargeTouchArea.h"
+#import "UILabel+YBAttributeTextTapAction.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import <PureLayout.h>
+#import <YYText.h>
+#import <YYCache/YYCache.h>
+#import <AFNetworking/AFNetworking.h>
+#import <BmobSDK/Bmob.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <pop/POP.h>
+#import <SDWebImage/SDWebImageManager.h>
+
+#define FONT(F) [UIFont fontWithName:@"GothamSSm-Light" size:F]
+
+#define UIColorFromRGB_16(rgbValue) [UIColor colorWithRed:((float)(((rgbValue) & 0xFF0000) >> 16))/255.0 green:((float)(((rgbValue) & 0xFF00) >> 8))/255.0 blue:((float)((rgbValue) & 0xFF))/255.0 alpha:1.0]
+
+#define Screen_height   [[UIScreen mainScreen] bounds].size.height
+#define Screen_width    [[UIScreen mainScreen] bounds].size.width
+
+//动态计算控件高度
+#define H(h) h*Screen_height/667
+//动态计算控件宽度
+#define W(w) w*Screen_width/375
+//动态计算字体大小
+#define APPFONT(f) FONT(f*Screen_height/667)
+
+#endif /* XyyHPCH_pch */
