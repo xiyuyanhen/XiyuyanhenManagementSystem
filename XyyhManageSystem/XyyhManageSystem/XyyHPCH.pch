@@ -40,4 +40,6 @@
 //动态计算字体大小
 #define APPFONT(f) FONT(f*Screen_height/667)
 
+#define WEAKSELF __weak __typeof(&*self)weakSelf_SC = self;
+
 #endif /* XyyHPCH_pch */

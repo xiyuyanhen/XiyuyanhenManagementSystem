@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "XyyHPCH.pch"
+#import "ManageSystemViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Bmob appKey
+    [Bmob registerWithAppKey:@"ad518fcbd43b921b6547a8397fe96084"];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ManageSystemViewController * manageSystemVC = [[ManageSystemViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:manageSystemVC];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
