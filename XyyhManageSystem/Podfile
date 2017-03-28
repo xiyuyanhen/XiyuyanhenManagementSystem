@@ -1,0 +1,13 @@
+platform :ios, ‘8.0’
+target 'XyyhManageSystem' do
+
+pod 'PureLayout'
+pod 'pop'
+pod "AFNetworking", "~> 2.0"
+pod 'IQKeyboardManager'
+pod 'SDWebImage', '~>3.6'
+pod 'YYCache'
+pod 'YYText'
+pod 'BmobSDK'
+
+end
