@@ -25,6 +25,7 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <pop/POP.h>
 #import <SDWebImage/SDWebImageManager.h>
+#import "UIScrollView+Touch.h"
 
 #define FONT(F) [UIFont fontWithName:@"GothamSSm-Light" size:F]
 

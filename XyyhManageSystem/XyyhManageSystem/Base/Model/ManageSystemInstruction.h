@@ -10,11 +10,14 @@
 
 @interface ManageSystemInstruction : NSObject
 
-@property (nonatomic, strong) NSString * instructionId;
-@property (nonatomic, strong) NSString * instructionPurpose;
-@property (nonatomic, strong) NSDate   * instructionCreateDate;
-@property (nonatomic, strong) NSDate   * instructionBeginDate;
-@property (nonatomic, strong) NSDate   * instructionOverDate;
-@property (nonatomic, strong) NSString * instructionStatus;
+@property (nonatomic, strong) NSString * orderId;
+@property (nonatomic, strong) NSString * user;
+@property (nonatomic, strong) NSString * purpose;
+@property (nonatomic, strong) NSDate   * createDate;
+@property (nonatomic, strong) NSDate   * beginDate;
+@property (nonatomic, strong) NSDate   * overDate;
+@property (nonatomic, strong) NSString * status;
+
+- (void)addInstructionToBmob:(void(^)(BOOL isSuccessful, NSError *error))resultBlock;
 
 @end

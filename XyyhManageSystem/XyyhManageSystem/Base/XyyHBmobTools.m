@@ -72,6 +72,21 @@
     }];
 }
 
+//获取所有数据
+- (void)bmobSearchDataWithClassName:(NSString *)className resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock{
+    
+    //查找表
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:className];
+    
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        
+        if(resultBlock){
+            
+            resultBlock(array,error);
+        }
+    }];
+}
+
 //删除一行数据
 - (void)bmobDeletDataWithClassName:(NSString *)className forKeyName:(NSString *)keyName searchKey:(id)key{
     

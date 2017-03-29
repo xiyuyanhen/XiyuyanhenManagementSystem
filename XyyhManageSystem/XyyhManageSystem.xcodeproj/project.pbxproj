@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B45FAA01E8BB8C800D459A5 /* ManageSystemLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B45FA9F1E8BB8C800D459A5 /* ManageSystemLogViewController.m */; };
 		4B6E64681E8A3E6600721034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E64671E8A3E6600721034 /* main.m */; };
 		4B6E646B1E8A3E6600721034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E646A1E8A3E6600721034 /* AppDelegate.m */; };
 		4B6E64731E8A3E6600721034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6E64721E8A3E6600721034 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		4B6E64C91E8A681E00721034 /* ManageSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E64C81E8A681E00721034 /* ManageSystemViewController.m */; };
 		4B6E64CD1E8A6C4000721034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6E64CA1E8A6C4000721034 /* Main.storyboard */; };
 		4B6E64CE1E8A6C4000721034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E64CC1E8A6C4000721034 /* ViewController.m */; };
+		4B7E8D901E8B63FC009177CA /* UIScrollView+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E8D8F1E8B63FC009177CA /* UIScrollView+Touch.m */; };
 		FF9BC6769F0E1A4E8970D498 /* libPods-XyyhManageSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2363F2570471364DD5607A02 /* libPods-XyyhManageSystem.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		2363F2570471364DD5607A02 /* libPods-XyyhManageSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XyyhManageSystem.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B45FA9E1E8BB8C800D459A5 /* ManageSystemLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageSystemLogViewController.h; sourceTree = "<group>"; };
+		4B45FA9F1E8BB8C800D459A5 /* ManageSystemLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageSystemLogViewController.m; sourceTree = "<group>"; };
 		4B6E64631E8A3E6600721034 /* XyyhManageSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XyyhManageSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6E64671E8A3E6600721034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B6E64691E8A3E6600721034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		4B6E64CA1E8A6C4000721034 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4B6E64CB1E8A6C4000721034 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4B6E64CC1E8A6C4000721034 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4B7E8D8E1E8B63FC009177CA /* UIScrollView+Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Touch.h"; sourceTree = "<group>"; };
+		4B7E8D8F1E8B63FC009177CA /* UIScrollView+Touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Touch.m"; sourceTree = "<group>"; };
 		C241030D1FC6414335AD5D00 /* Pods-XyyhManageSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XyyhManageSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-XyyhManageSystem/Pods-XyyhManageSystem.release.xcconfig"; sourceTree = "<group>"; };
 		E02D782F8D7132E0206F71EE /* Pods-XyyhManageSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XyyhManageSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XyyhManageSystem/Pods-XyyhManageSystem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +165,8 @@
 				4B6E64CC1E8A6C4000721034 /* ViewController.m */,
 				4B6E64C71E8A681E00721034 /* ManageSystemViewController.h */,
 				4B6E64C81E8A681E00721034 /* ManageSystemViewController.m */,
+				4B45FA9E1E8BB8C800D459A5 /* ManageSystemLogViewController.h */,
+				4B45FA9F1E8BB8C800D459A5 /* ManageSystemLogViewController.m */,
 				4B6E64721E8A3E6600721034 /* Assets.xcassets */,
 				4B6E64741E8A3E6600721034 /* LaunchScreen.storyboard */,
 				4B6E64771E8A3E6600721034 /* Info.plist */,
@@ -226,6 +234,8 @@
 		4B6E64A71E8A405500721034 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4B7E8D8E1E8B63FC009177CA /* UIScrollView+Touch.h */,
+				4B7E8D8F1E8B63FC009177CA /* UIScrollView+Touch.m */,
 				4B6E64A81E8A405500721034 /* UIButton+EnlargeTouchArea.h */,
 				4B6E64A91E8A405500721034 /* UIButton+EnlargeTouchArea.m */,
 				4B6E64AA1E8A405500721034 /* UILabel+YBAttributeTextTapAction.h */,
@@ -431,12 +441,14 @@
 			files = (
 				4B6E64CE1E8A6C4000721034 /* ViewController.m in Sources */,
 				4B6E64C61E8A64D500721034 /* ManageSystemInstruction.m in Sources */,
+				4B7E8D901E8B63FC009177CA /* UIScrollView+Touch.m in Sources */,
 				4B6E64C91E8A681E00721034 /* ManageSystemViewController.m in Sources */,
 				4B6E64B01E8A405500721034 /* BaseTextField.m in Sources */,
 				4B6E64BC1E8A40A800721034 /* BaseViewController.m in Sources */,
 				4B6E64B11E8A405500721034 /* BaseTextView.m in Sources */,
 				4B6E64B91E8A407E00721034 /* BaseView.m in Sources */,
 				4B6E64C01E8A4CB500721034 /* XyyHBmobTools.m in Sources */,
+				4B45FAA01E8BB8C800D459A5 /* ManageSystemLogViewController.m in Sources */,
 				4B6E64B51E8A405500721034 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				4B6E646B1E8A3E6600721034 /* AppDelegate.m in Sources */,
 				4B6E64B41E8A405500721034 /* UIButton+EnlargeTouchArea.m in Sources */,

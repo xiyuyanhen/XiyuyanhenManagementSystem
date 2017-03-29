@@ -758,6 +758,24 @@
     [self setCustomContentTitleWithState:state];
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state {
+    [self setBackgroundImage:[self imageWithColor:backgroundColor] forState:state];
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 #pragma mark - 懒加载
 #pragma mark -
 

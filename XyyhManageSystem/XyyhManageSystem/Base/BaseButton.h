@@ -76,4 +76,6 @@ typedef void(^HighlightedBlock)(CustomControlState state);
 - (void)inversion;
 
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
+
 @end
