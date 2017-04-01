@@ -16,7 +16,8 @@
 //添加一组数据
 - (BmobObject *)bmobAddDataWithClassName:(NSString *)className parameters:(NSDictionary *)parameters resultBlock:(void(^)(BOOL isSuccessful, NSError *error))resultBlock;
 //匹配指定keyName的value值来查询数据
-- (void)bmobSearchDataWithClassName:(NSString *)className forKeyName:(NSString *)keyName searchKey:(id)key resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock;
+- (void)bmobSearchDataWithClassName:(NSString *)className forKey:(NSString *)key searchValue:(id)value resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock;
+- (void)bmobSearchDataWithClassName:(NSString *)className parameters:(NSDictionary *)parameters resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock;
 //获取所有数据
 - (void)bmobSearchDataWithClassName:(NSString *)className resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock;
 //删除一行数据

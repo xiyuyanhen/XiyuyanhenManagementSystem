@@ -8,6 +8,7 @@
 
 #import "ManageSystemViewController.h"
 #import "ManageSystemInstruction.h"
+#import "ManageSystemLogViewController.h"
 #import "XyyHBmobTools.h"
 
 @interface ManageSystemViewController ()<UITextViewDelegate>
@@ -171,22 +172,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    XyyHBmobTools * tool = [[XyyHBmobTools alloc] init];
-    [tool bmobSearchDataWithClassName:@"SystemInstructions" resultBlock:^(NSArray *array, NSError *error) {
-       
-        if(error){
-            
-        }else{
-            
-            if(array && array.count>0){
-                
-                for(BmobObject * object in array){
-                    
-                    NSString * user = [object objectForKey:@"user"];
-                }
-            }
-        }
-    }];
+    
     
     
 }
@@ -241,7 +227,8 @@
 
 - (void)logHandle:(UIBarButtonItem *)buttonItem{
     
-    
+    ManageSystemLogViewController * manageSystemLogVC = [[ManageSystemLogViewController alloc] init];
+    [self.navigationController pushViewController:manageSystemLogVC animated:YES];
 }
 
 - (void)purposeTFChange:(BaseTextField *)textField{
@@ -269,7 +256,6 @@
 - (void)submitHandle:(BaseButton *)button{
     
     ManageSystemInstruction * instruction = [[ManageSystemInstruction alloc] init];
-    instruction.orderId = @"xiyuyanhen";
     instruction.purpose = self.purposeTextField.text;
     instruction.createDate = [NSDate date];
     instruction.beginDate = self.beginDate;
@@ -288,8 +274,10 @@
                 message = error.userInfo[@"NsLocalizedDescription"];
             }
             
-            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Instruction 添加失败" message:message preferredStyle:UIAlertControllerStyleAlert];
-            [self.navigationController pushViewController:alertController animated:YES];
+            UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Instruction 添加失败" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
+            
             
         }else{
             
@@ -300,8 +288,9 @@
                 message = @"添加失败！";
             }
             
-            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Instruction 添加失败" message:message preferredStyle:UIAlertControllerStyleAlert];
-            [self.navigationController pushViewController:alertController animated:YES];
+            UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Instruction" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
         }
     }];
     

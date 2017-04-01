@@ -28,6 +28,7 @@
 		4B6E64CD1E8A6C4000721034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6E64CA1E8A6C4000721034 /* Main.storyboard */; };
 		4B6E64CE1E8A6C4000721034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E64CC1E8A6C4000721034 /* ViewController.m */; };
 		4B7E8D901E8B63FC009177CA /* UIScrollView+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E8D8F1E8B63FC009177CA /* UIScrollView+Touch.m */; };
+		4BA25CAB1E8CD3840012B664 /* ManageSystemLogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25CAA1E8CD3840012B664 /* ManageSystemLogTableViewCell.m */; };
 		FF9BC6769F0E1A4E8970D498 /* libPods-XyyhManageSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2363F2570471364DD5607A02 /* libPods-XyyhManageSystem.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,8 @@
 		4B6E64CC1E8A6C4000721034 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4B7E8D8E1E8B63FC009177CA /* UIScrollView+Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Touch.h"; sourceTree = "<group>"; };
 		4B7E8D8F1E8B63FC009177CA /* UIScrollView+Touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Touch.m"; sourceTree = "<group>"; };
+		4BA25CA91E8CD3840012B664 /* ManageSystemLogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageSystemLogTableViewCell.h; sourceTree = "<group>"; };
+		4BA25CAA1E8CD3840012B664 /* ManageSystemLogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageSystemLogTableViewCell.m; sourceTree = "<group>"; };
 		C241030D1FC6414335AD5D00 /* Pods-XyyhManageSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XyyhManageSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-XyyhManageSystem/Pods-XyyhManageSystem.release.xcconfig"; sourceTree = "<group>"; };
 		E02D782F8D7132E0206F71EE /* Pods-XyyhManageSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XyyhManageSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XyyhManageSystem/Pods-XyyhManageSystem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +170,8 @@
 				4B6E64C81E8A681E00721034 /* ManageSystemViewController.m */,
 				4B45FA9E1E8BB8C800D459A5 /* ManageSystemLogViewController.h */,
 				4B45FA9F1E8BB8C800D459A5 /* ManageSystemLogViewController.m */,
+				4BA25CA91E8CD3840012B664 /* ManageSystemLogTableViewCell.h */,
+				4BA25CAA1E8CD3840012B664 /* ManageSystemLogTableViewCell.m */,
 				4B6E64721E8A3E6600721034 /* Assets.xcassets */,
 				4B6E64741E8A3E6600721034 /* LaunchScreen.storyboard */,
 				4B6E64771E8A3E6600721034 /* Info.plist */,
@@ -454,6 +459,7 @@
 				4B6E64B41E8A405500721034 /* UIButton+EnlargeTouchArea.m in Sources */,
 				4B6E64B61E8A405500721034 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				4B6E64AF1E8A405500721034 /* BaseButton.m in Sources */,
+				4BA25CAB1E8CD3840012B664 /* ManageSystemLogTableViewCell.m in Sources */,
 				4B6E64681E8A3E6600721034 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

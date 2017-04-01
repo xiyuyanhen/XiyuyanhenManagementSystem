@@ -27,6 +27,28 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    NSInteger prices[7] = {250,300,350,400,450,500,550};
+    NSInteger counts[] = {4000000000,3333333400,2857142900,2500000000,2222222300,2000000000,1818181900};
+    
+    for(int n=0; n<7; n++){
+        
+        NSInteger price = prices[n];
+        NSInteger count = 0;
+        for(NSInteger i=0; i<10000000000; i++){
+            
+            if( i%price < 100 ){
+                
+                count ++;
+            }
+        }
+        
+        double rate = (double)count/(double)10000000000;
+        
+        NSLog(@"Price:%ld count:%ld rate:%lf",price,count,rate);
+    }
+    
+
 }
 
 - (void)testPerformanceExample {

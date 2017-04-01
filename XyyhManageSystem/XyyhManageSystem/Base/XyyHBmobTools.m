@@ -56,12 +56,49 @@
 }
 
 //匹配指定keyName的value值来查询数据
-- (void)bmobSearchDataWithClassName:(NSString *)className forKeyName:(NSString *)keyName searchKey:(id)key resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock{
+- (void)bmobSearchDataWithClassName:(NSString *)className forKey:(NSString *)key searchValue:(id)value resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock{
+    
+    //查找表
+    NSDictionary * parameter;
+    if(key && key.length>0 && value){
+        
+        parameter = @{key:value};
+    }
+    
+    [self bmobSearchDataWithClassName:className parameters:parameter resultBlock:^(NSArray *array, NSError *error) {
+        
+        if(resultBlock){
+            
+            resultBlock(array, error);
+        }
+    }];
+}
+
+
+/** 根据条件获取数据
+ *	添加key的值等于object的约束条件
+ *
+ *	@	key	键
+ *	@	object	提供的值
+ */
+- (void)bmobSearchDataWithClassName:(NSString *)className parameters:(NSDictionary *)parameters resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock{
     
     //查找表
     BmobQuery   *bquery = [BmobQuery queryWithClassName:className];
     
-    [bquery whereKey:keyName equalTo:key];
+    if(parameters && parameters.count>0){
+        
+        for(NSString * key in parameters.allKeys){
+            
+            id value = parameters[key];
+            
+            if(key && key.length>0 && value){
+                
+                [bquery whereKey:key equalTo:value];
+            }
+        }
+    }
+    
     
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         
@@ -76,13 +113,11 @@
 - (void)bmobSearchDataWithClassName:(NSString *)className resultBlock:(void(^)(NSArray *array, NSError *error))resultBlock{
     
     //查找表
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:className];
-    
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+    [self bmobSearchDataWithClassName:className parameters:nil resultBlock:^(NSArray *array, NSError *error) {
         
         if(resultBlock){
             
-            resultBlock(array,error);
+            resultBlock(array, error);
         }
     }];
 }

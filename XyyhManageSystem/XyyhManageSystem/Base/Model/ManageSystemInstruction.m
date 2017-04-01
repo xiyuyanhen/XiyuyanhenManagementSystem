@@ -11,10 +11,12 @@
 
 @interface ManageSystemInstruction ()
 
-@property (nonatomic, strong) NSString * className;
+
 @end
 
 @implementation ManageSystemInstruction
+
+static NSString * className = @"SystemInstructions";
 
 - (instancetype)init{
     
@@ -22,9 +24,29 @@
     
     if(self){
         
-        self.className = @"SystemInstructions";
+        self.user = @"xiyuyanhen";
     }
     return self;
+}
+
++ (instancetype)createByBmobObject:(BmobObject *)object{
+    
+    ManageSystemInstruction * instruction = [[ManageSystemInstruction alloc] init];
+    
+    instruction.orderId    = [object objectForKey:@"orderId"];
+    instruction.user       = [object objectForKey:@"user"];
+    instruction.purpose    = [object objectForKey:@"purpose"];
+    instruction.createDate = [object objectForKey:@"createDate"];
+    instruction.beginDate  = [object objectForKey:@"beginDate"];
+    instruction.overDate   = [object objectForKey:@"overDate"];
+    instruction.status     = [object objectForKey:@"status"];
+    
+    return instruction;
+}
+
+- (NSString *)className{
+    
+    return className;
 }
 
 - (NSDictionary *)parametersFromObject{
@@ -69,11 +91,40 @@
     return parameters;
 }
 
+- (NSString *)stringFromDate:(NSDate *)date{
+    
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"YYYY-MM-dd HH:mm:ss";
+    
+    return [formatter stringFromDate:date];
+}
+
+- (NSDate *)dateFromString:(NSString *)string{
+    
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone localTimeZone];
+    formatter.dateFormat = @"YYYY-MM-dd HH:mm:ss";
+    
+    return [formatter dateFromString:string];
+}
+
+- (void)setupInstructionFromBmobObject:(BmobObject *)object{
+    
+    self.orderId    = [object objectForKey:@"orderId"];
+    self.user       = [object objectForKey:@"user"];
+    self.purpose    = [object objectForKey:@"purpose"];
+    self.createDate = [object objectForKey:@"createDate"];
+    self.beginDate  = [object objectForKey:@"beginDate"];
+    self.overDate   = [object objectForKey:@"overDate"];
+    self.status     = [object objectForKey:@"status"];
+    
+}
+
 - (void)addInstructionToBmob:(void(^)(BOOL isSuccessful, NSError *error))resultBlock{
     
     XyyHBmobTools * tool = [[XyyHBmobTools alloc] init];
     
-    [tool bmobAddDataWithClassName:self.className parameters:[self parametersFromObject] resultBlock:^(BOOL isSuccessful, NSError *error) {
+    [tool bmobAddDataWithClassName:className parameters:[self parametersFromObject] resultBlock:^(BOOL isSuccessful, NSError *error) {
         
         if(resultBlock){
             
@@ -82,11 +133,66 @@
     }];
 }
 
-- (void)getInstructionFromBmob{
+//获取指定user的所有Instruction
+- (void)getUserInstructionFromBmob:(NSString *)user result:(void(^)(NSArray <ManageSystemInstruction *>*array, NSError *error))resultBlock{
     
     XyyHBmobTools * tool = [[XyyHBmobTools alloc] init];
+    [tool bmobSearchDataWithClassName:className forKey:@"user" searchValue:self.user resultBlock:^(NSArray *array, NSError *error) {
+        
+        NSMutableArray * newArray = [NSMutableArray new];
+        if(array && array.count>0){
+            
+            for(BmobObject * object in array){
+                
+                if([object.className isEqualToString:className]){
+                    
+                    ManageSystemInstruction * instruction = [ManageSystemInstruction createByBmobObject:object];
+                    if(instruction){
+                        
+                        [newArray addObject:instruction];
+                    }
+                }
+            }
+        }
+        
+        NSArray * resultArray = [NSArray arrayWithArray:newArray.count>0?newArray:array];
+        
+        if(resultBlock){
+            
+            resultBlock(resultArray,error);
+        }
+    }];
+}
+
+//获取所有Instruction
+- (void)getAllInstructionFromBmob:(void(^)(NSArray <ManageSystemInstruction *>*array, NSError *error))resultBlock{
     
-    
+    XyyHBmobTools * tool = [[XyyHBmobTools alloc] init];
+    [tool bmobSearchDataWithClassName:className resultBlock:^(NSArray *array, NSError *error) {
+        
+        NSMutableArray * newArray = [NSMutableArray new];
+        if(array && array.count>0){
+            
+            for(BmobObject * object in array){
+                
+                if([object.className isEqualToString:className]){
+                    
+                    ManageSystemInstruction * instruction = [ManageSystemInstruction createByBmobObject:object];
+                    if(instruction){
+                        
+                        [newArray addObject:instruction];
+                    }
+                }
+            }
+        }
+        
+        NSArray * resultArray = [NSArray arrayWithArray:newArray.count>0?newArray:array];
+        
+        if(resultBlock){
+            
+            resultBlock(resultArray,error);
+        }
+    }];
 }
 
 
